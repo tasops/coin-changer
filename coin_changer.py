@@ -65,8 +65,8 @@ def numVal(prompt):
             continue
 
         # Checking if value isnt more than 100 mil because it takes forever to calculate the change.
-        # And it checks if there isnt more than 3 decimal places.
-        integer, decimal = str(value).split('.')
+        # And it checks if there isnt more than 2 decimal places.
+        integer, decimal = str(value).split('.')  # Parsing inputed float
         if len(integer) > 8 or len(decimal) > 2:
             print(
                 'Error! Number cant be larger than 100 million or have more than 3 decimal places!')
