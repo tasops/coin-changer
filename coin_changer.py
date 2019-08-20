@@ -29,18 +29,17 @@ def change(cash, cost):
 
         for denomination in denominations:
             quantity = 0
-            name = ''
             while change >= denomination:
                 change = round(change - denomination, 2)
                 quantity += 1
             if quantity > 0:
                 if denomination < 1:
                     prefix = ''
-                    name = '¢'
                     denomination = int(denomination * 100)
+                    denomination = f'{denomination}¢'
                 if quantity > 1:
-                    name = name + f' - x{quantity}'
-                print(f'{prefix}{denomination} {name}')
+                    denomination = f'{denomination} - x{quantity}'
+                print(f'{prefix}{denomination}')
 
     elif change == 0:
         print('----------------')
