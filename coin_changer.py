@@ -63,15 +63,15 @@ def numVal(prompt):
         except ValueError:
             print('Error! Only numbers are allowed! Decimals only after a dot.')
             continue
-        # Checking if value isnt more than 100 milion because if it is, then it takes forever to calculate the change
-        if len(str(round(value))) > 8:
-            print('Error! Numbers larger 100 milion are disallowed.')
-            continue
-        # Counting decimal places
+
+        # Checking if value isnt more than 100 mil because it takes forever to calculate the change.
+        # And it checks if there isnt more than 3 decimal places.
         integer, decimal = str(value).split('.')
-        if len(decimal) > 2:
-            print('Error! More than 3 decimal places are disallowed!')
+        if len(integer) > 8 or len(decimal) > 2:
+            print(
+                'Error! Number cant be larger than 100 million or have more than 3 decimal places!')
             continue
+
         else:
             return value
 
