@@ -69,7 +69,7 @@ def numVal(prompt):
         integer, decimal = str(value).split('.')  # Parsing inputed float
         if len(integer) > 8 or len(decimal) > 2:
             print(
-                'Error! Number cant be larger than 100 million or have more than 3 decimal places!')
+                'Error! Number cant be larger than 100 million or have more than 2 decimal places!')
             continue
 
         else:
