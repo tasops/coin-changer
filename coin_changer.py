@@ -18,7 +18,6 @@ def main():
 
 def change(cash, cost):
     prefix = '$'
-    name = ''
     denominations = [100, 50, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01]
 
     change = round(cash - cost, 2)
@@ -30,9 +29,10 @@ def change(cash, cost):
 
         for denomination in denominations:
             quantity = 0
+            name = ''
             while change >= denomination:
                 change = round(change - denomination, 2)
-                quantity = quantity + 1
+                quantity += 1
             if quantity > 0:
                 if denomination < 1:
                     prefix = ''
