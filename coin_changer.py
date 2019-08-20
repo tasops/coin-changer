@@ -64,6 +64,9 @@ def numVal(prompt):
         except ValueError:
             print('Error! Only numbers are allowed! Decimals only after a dot.')
             continue
+        if len(str(round(value))) > 8:
+            print('Error! Numbers larger 100 milion are disallowed.')
+            continue
         else:
             return value
 
