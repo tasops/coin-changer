@@ -35,8 +35,7 @@ def change(cash, cost):
             if quantity > 0:
                 if denomination < 1:
                     prefix = ''
-                    denomination = int(denomination * 100)
-                    denomination = f'{denomination}¢'
+                    denomination = f'{int(denomination * 100)}¢'
                 if quantity > 1:
                     denomination = f'{denomination} - x{quantity}'
                 print(f'{prefix}{denomination}')
