@@ -56,6 +56,7 @@ def change(cash, cost):
         return
 
 
+# Input sanitizing
 def numVal(prompt):
     while True:
         try:
