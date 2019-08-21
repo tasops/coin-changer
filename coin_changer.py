@@ -60,6 +60,11 @@ def change(cash, cost):
 def numVal(prompt):
     while True:
         value = str(input(prompt))
+        try:
+            float(value)
+        except ValueError:
+            print('Error! Only numbers are allowed! Decimals only after a dot.')
+            continue
         check = value.split('.')
         if len(check[0]) > 8:
             print(
@@ -69,13 +74,10 @@ def numVal(prompt):
             if len(check[1]) > 2:
                 print('Error! Number cannot have more than 2 decimal numbers!')
                 continue
-        try:
-            value = float(value)
-        except ValueError:
-            print('Error! Only numbers are allowed! Decimals only after a dot.')
-            continue
+            else:
+                return float(value)
         else:
-            return value
+            return float(value)
 
 
 main()
