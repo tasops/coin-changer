@@ -59,20 +59,21 @@ def change(cash, cost):
 # Input sanitizing
 def numVal(prompt):
     while True:
+        value = str(input(prompt))
+        check = value.split('.')
+        if len(check[0]) > 8:
+            print(
+                'Error! Number cannot be larger than 100 million!')
+            continue
+        if '.' in value:
+            if len(check[1]) > 2:
+                print('Error! Number cannot have more than 2 decimal numbers!')
+                continue
         try:
-            value = float(input(prompt))
+            value = float(value)
         except ValueError:
             print('Error! Only numbers are allowed! Decimals only after a dot.')
             continue
-
-        # Checking if value isnt more than 100 mil because it takes forever to calculate the change.
-        # And it checks if there isnt more than 2 decimal places.
-        integer, decimal = str(value).split('.')  # Parsing inputed float
-        if len(integer) > 8 or len(decimal) > 2:
-            print(
-                'Error! Number cant be larger than 100 million or have more than 2 decimal places!')
-            continue
-
         else:
             return value
 
