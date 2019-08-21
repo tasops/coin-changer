@@ -21,10 +21,11 @@ def change(cash, cost):
     denominations = [100, 50, 20, 10, 5, 1, 0.25, 0.10, 0.05, 0.01]
 
     change = round(cash - cost, 2)
+    change_show = format(abs(change), ',.2f')
 
     if change > 0:
         print('--------------------')
-        print(f'Change: {prefix}{change}')
+        print(f'Change: {prefix}{change_show}')
         print('--------------------')
 
         for denomination in denominations:
@@ -49,7 +50,7 @@ def change(cash, cost):
         print(
             '-----------------------------------------------------------------------')
         print(
-            f'Not enough money! {prefix}{abs(change)} is missing!')
+            f'Not enough money! {prefix}{change_show} is missing!')
         print(
             '-----------------------------------------------------------------------')
     else:
@@ -59,6 +60,7 @@ def change(cash, cost):
 # Input sanitizing
 def numVal(prompt):
     while True:
+
         value = str(input(prompt))
         if ',' in value:
             value = value.replace(',', '.')
