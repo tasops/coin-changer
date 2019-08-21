@@ -63,15 +63,11 @@ def numVal(prompt):
 
         value = str(input(prompt))  # Take user input
 
-        # Clean it
-        value = value.replace(',', '.')
-        value = value.replace(' ', '')
-
         # Then check if its a float
         try:
             float(value)
         except ValueError:
-            print('Error! Only numbers are allowed!')
+            print('Error! Only numbers are allowed! Decimals after the dot.')
             continue
 
         # If it is, then separate integer from decimal, count both and check
