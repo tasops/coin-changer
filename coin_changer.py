@@ -60,15 +60,18 @@ def change(cash, cost):
 # Input sanitizing
 def numVal(prompt):
     while True:
-        # Take user input and check if its a float
+        # Take user input
+        value = str(input(prompt))  # Take user input
+
+        # And check if its a float
         try:
-            value = float(input(prompt))
+            float(value)
         except ValueError:
             print('Error! Only numbers are allowed! Decimals after the dot.')
             continue
 
         # Then separate integer from decimal, count both and check conditions
-        check = str(value).split('.')
+        check = value.split('.')
         if len(check[0]) > 8:
             print('Error! Value cannot be larger than 100 million!')
             continue
@@ -77,7 +80,7 @@ def numVal(prompt):
             continue
 
         # Finally if it passes all the checks, give it back
-        return value
+        return float(value)
 
 
 main()
