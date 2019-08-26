@@ -61,7 +61,7 @@ def change(cash, cost):
 def numVal(prompt):
     while True:
         # Take user input
-        value = str(input(prompt))  # Take user input
+        value = str(input(prompt))
 
         # And check if its a float
         try:
@@ -75,7 +75,7 @@ def numVal(prompt):
         if len(check[0]) > 8:
             print('Error! Value cannot be larger than 100 million!')
             continue
-        if len(check) > 1 and len(check[1]) > 2:
+        elif len(check) > 1 and len(check[1]) > 2:
             print('Error! There cannot be more than 2 decimal numbers!')
             continue
 
