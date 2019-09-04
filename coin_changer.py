@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 
 def main():
@@ -83,4 +84,5 @@ def numVal(prompt):
         return float(value)
 
 
-main()
+if __name__ == '__main__':
+    main()
